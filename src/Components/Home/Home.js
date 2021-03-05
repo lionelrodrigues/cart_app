@@ -5,14 +5,20 @@ function Home(props) {
   console.warn(props);
   let ListItems = props.items.map((item) => {
     return (
-      <div key={item.id}>
+      <div key={item.id} className="item-container">
         <div>
-          <span>{item.title}</span>
-          <p>{item.desc}</p>
+          <h2>{item.title}</h2>
+          <p>
+            discription:
+            <br />
+            {item.desc}
+          </p>
           <span>
-            <b>{item.price}</b>
+            price:&#x20B9;<b>{item.price}</b>
           </span>
-          <button onClick={() => props.addToCart(item.id)}> add to cart</button>
+          <button onClick={() => props.addToCart(item.id)} className="btn">
+            add to cart
+          </button>
         </div>
       </div>
     );

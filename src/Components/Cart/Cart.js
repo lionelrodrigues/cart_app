@@ -4,12 +4,12 @@ function Cart(props) {
   console.log("cart", props);
   const cartItems = props.addedItems.map((item) => {
     return (
-      <div className="cart-container" key={item.id}>
+      <div className="item-container" key={item.id}>
         <b>{item.id}</b> <h2>{item.title}</h2>
         <p>{item.desc}</p>
         <span>{item.price}</span>
         <span>quantity {item.quantity}</span>
-        <button onClick={() => props.removeFromCart(item.id)}>
+        <button onClick={() => props.removeFromCart(item.id)} className="btn">
           remove item
         </button>
       </div>

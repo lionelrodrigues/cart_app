@@ -5,5 +5,5 @@ export const addToCart = (id) => {
 };
 
 export const removeFromCart = (id) => {
-  return { typr: REMOVE_FROM_CART, id: id };
+  return { type: REMOVE_FROM_CART, id: id };
 };

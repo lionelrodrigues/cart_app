@@ -39,11 +39,12 @@ export const cartReducer = (state = initalState, action) => {
         //filter from addedItems array
         (item) => action.id !== item.id
       );
-      let newTotal = state.total - (removedItem.price - removedItem.quantity);
+      let newTotal = state.total - removedItem.price * removedItem.quantity;
       return {
         ...state,
         addedItems: filteredItems,
         total: newTotal,
+        cartItem: state.cartItem - removedItem.quantity,
       };
     }
     default:

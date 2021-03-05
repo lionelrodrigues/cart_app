@@ -14,7 +14,9 @@ function Navbar(props) {
             <Link to="/cart">your cart</Link>
           </li>
           <li>
-            <Link to="/cart">cartlogo</Link>
+            <Link to="/cart">
+              <i className="fa fa-shopping-cart"></i>
+            </Link>
             <span className="cart-number">{props.cartItems}</span>
             {/* <b>
               <span>{props.items.length}</span>
