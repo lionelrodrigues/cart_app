@@ -1,7 +1,7 @@
 export const items = [
   {
     id: 1,
-    title: "Puma",
+    title: "puma",
     desc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
     price: 110,
@@ -9,7 +9,7 @@ export const items = [
   },
   {
     id: 2,
-    title: "Adidas",
+    title: "adidas",
     desc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
     price: 80,
@@ -17,7 +17,7 @@ export const items = [
   },
   {
     id: 3,
-    title: "Vans",
+    title: "vans",
     desc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
     price: 120,
@@ -25,7 +25,7 @@ export const items = [
   },
   {
     id: 4,
-    title: "Nikes",
+    title: "nikes",
     desc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
     price: 260,
@@ -41,7 +41,7 @@ export const items = [
   },
   {
     id: 6,
-    title: "Reebok",
+    title: "reebok",
     desc:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, ex.",
     price: 90,

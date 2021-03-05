@@ -1,4 +1,8 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../Actions/constants";
+import {
+  ADD_TO_CART,
+  REMOVE_FROM_CART,
+  SEARCH_ITEM,
+} from "../Actions/constants";
 import { items } from "../items";
 
 const initalState = {
@@ -46,6 +50,25 @@ export const cartReducer = (state = initalState, action) => {
         total: newTotal,
         cartItem: state.cartItem - removedItem.quantity,
       };
+    }
+    case SEARCH_ITEM: {
+      if (action.text === "" || action.text === " ") {
+        return {
+          ...state,
+          items: items,
+        };
+      } else {
+        let aitems = state.items.filter((e) => action.text === e.title);
+        return aitems
+          ? {
+              ...state,
+              items: aitems,
+            }
+          : {
+              ...state,
+              items: items,
+            };
+      }
     }
     default:
       return state;
