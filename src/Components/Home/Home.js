@@ -3,7 +3,6 @@ import React from "react";
 // import { items } from "../../Redux/items";
 function Home(props) {
   console.warn(props);
-  console.warn(props);
   let ListItems = props.items.map((item) => {
     return (
       <div key={item.id}>

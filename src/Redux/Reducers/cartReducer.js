@@ -1,4 +1,4 @@
-import { ADD_TO_CART } from "../Actions/constants";
+import { ADD_TO_CART, REMOVE_FROM_CART } from "../Actions/constants";
 import { items } from "../items";
 
 const initalState = {
@@ -11,10 +11,10 @@ const initalState = {
 export const cartReducer = (state = initalState, action) => {
   switch (action.type) {
     case ADD_TO_CART: {
-      const addedItem = state.items.find((item) => item.id === action.id);
-      const existItem = state.addedItems.find((item) => item.id === action.id);
+      const addedItem = state.items.find((item) => item.id === action.id); //getting the value from items array which equals to action.id
+      const existItem = state.addedItems.find((item) => item.id === action.id); //checking weather the item exist in cartItemArray
       if (existItem) {
-        addedItem.quantity += 1;
+        addedItem.quantity += 1; //adding quantity propery
         return {
           ...state,
           total: state.total + addedItem.price,
@@ -31,7 +31,21 @@ export const cartReducer = (state = initalState, action) => {
         };
       }
     }
-
+    case REMOVE_FROM_CART: {
+      const removedItem = state.addedItems.find(
+        (item) => item.id === action.id
+      ); //getting the id of item to be removed
+      const filteredItems = state.addedItems.filter(
+        //filter from addedItems array
+        (item) => action.id !== item.id
+      );
+      let newTotal = state.total - (removedItem.price - removedItem.quantity);
+      return {
+        ...state,
+        addedItems: filteredItems,
+        total: newTotal,
+      };
+    }
     default:
       return state;
   }

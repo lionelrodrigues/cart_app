@@ -5,7 +5,7 @@ function Navbar(props) {
   console.warn("navbar", props);
   return (
     <nav className="nav-wrapper">
-      <div className="container">
+      <div className="nav-container">
         <Link to="/">
           <h2>Redux Shopping Cart App</h2>
         </Link>
@@ -15,7 +15,7 @@ function Navbar(props) {
           </li>
           <li>
             <Link to="/cart">cartlogo</Link>
-            <span>{props.cartItems}</span>
+            <span className="cart-number">{props.cartItems}</span>
             {/* <b>
               <span>{props.items.length}</span>
             </b> */}
